@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Secured Exam Portal</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/index.css')}}" rel= "stylesheet" type= "text/css">
+
+  </head>
+
+  <body>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <script>
+        var messages = {{ messages | safe }};
+         for (var i=0; i<messages.length; i++) {
+           alert(messages[i]);
+         }
+      </script>
+    {% endif %}
+  {% endwith %}
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Secured Exam Portal</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li><a href="/">Logout</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+
+             <form action = "a" method = "POST" enctype = "multipart/form-data">
+              <input type = "file" name = "file" />
+              <input type = "submit"/>
+              </form>
+
+
+
+            <form  method="POST" accept-charset="utf-8">
+              <div class="row">
+                <div class="col-lg-10  col-md-offset-1">
+                    
+                    <input type="text" name="name" class="form-control" placeholder="Enter Name of File.." >
+                    <p class="lead">
+                      
+                      <button type="submit" formaction="b" class="btn btn-lg btn-default">Download</button>
+                    </p>
+                </div><!-- /.col-lg-6 -->
+              </div><!-- /.row -->
+            </form>
+            
+
+          </div> 
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p><strong>" First, solve the problem.Then, Write the code. "</strong></p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    
+  </body>
+</html>
